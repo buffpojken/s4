@@ -1,13 +1,14 @@
 #import "jsbridge.h"
 #import "WebScriptObject+EVJS.h"
 #import "NSDictionary+CUAdditions.h"
-
 #import <ApplicationServices/ApplicationServices.h>
 
+#import <CoreLocation/CoreLocation.h>
 #import "EVApp.h"
 #import "CUApp.h"
 #import "CUWindow.h"
 
+#define FBOX(x) [NSNumber numberWithFloat:x]
 @implementation CUApp
 
 @synthesize version, defaults, defaultsController, webView;
@@ -38,7 +39,30 @@ CUJS_TRANSPOND_NAMES_PLAIN
 	[webView setFrameLoadDelegate:self];
 	[webView setUIDelegate:self];
 	[[webView windowScriptObject] setValue:self forKey:kCUAppWebScriptNamespace];
-	return self;
+    
+    loc = [[CLLocationManager alloc] init];
+    loc.delegate = self;
+    [loc startUpdatingLocation];
+    
+    return self;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    // Ignore updates where nothing we care about changed
+    if (newLocation.coordinate.longitude == oldLocation.coordinate.longitude &&
+        newLocation.coordinate.latitude == oldLocation.coordinate.latitude &&
+        newLocation.horizontalAccuracy == oldLocation.horizontalAccuracy)
+    {
+        return;
+    }
+
+    NSLog(@"ninja...");
+   id laser = [[webView windowScriptObject] callWebScriptMethod:@"negerkung" withArguments:[NSArray arrayWithObjects:FBOX(newLocation.coordinate.latitude), FBOX(newLocation.coordinate.longitude), nil]];
+    NSLog(@"%@", laser);
 }
 
 

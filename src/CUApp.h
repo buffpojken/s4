@@ -1,3 +1,5 @@
+#import <CoreLocation/CoreLocation.h>
+
 @class CUWin;
 
 @interface CUApp : NSObject {
@@ -11,6 +13,9 @@
 	
 	// WebView object
 	WebView *webView;
+    
+    CLLocationManager *loc;
+    
 	
 @protected
 	WebPreferences *_webPrefs;

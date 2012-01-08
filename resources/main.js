@@ -36,3 +36,10 @@ console.log(s);
 var o = App.decodeJSON(s);
 console.log(o.uri);
 */
+
+function negerkung(latitude, longitude){
+    console.log(latitude);
+    console.log(longitude);
+    alert("negerkung!")
+    return "ninja";
+}

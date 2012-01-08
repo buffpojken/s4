@@ -60,6 +60,8 @@
 		3AF3BB2E105C20F600B3CBCC /* WebScriptObject+EVJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3BB2D105C20F600B3CBCC /* WebScriptObject+EVJS.m */; };
 		3AF3BB55105C27F700B3CBCC /* NSUserDefaults+EVJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3BB54105C27F700B3CBCC /* NSUserDefaults+EVJS.m */; };
 		3AF3BB5A105C2AAB00B3CBCC /* NSUserDefaultsController+EVJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3BB59105C2AAB00B3CBCC /* NSUserDefaultsController+EVJS.m */; };
+		4E7170C714BA0AF600A981DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7170C614BA0AF600A981DA /* CoreLocation.framework */; };
+		4E7170C814BA0D8600A981DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7170C614BA0AF600A981DA /* CoreLocation.framework */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -159,6 +161,7 @@
 		3AF3BBF7105C3C0D00B3CBCC /* WebInspectorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInspectorWindowController.h; sourceTree = "<group>"; };
 		3AF3BC1C105C421700B3CBCC /* FScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FScript.framework; path = /Library/Frameworks/FScript.framework; sourceTree = "<absolute>"; };
 		3AF3BC5C105C49CC00B3CBCC /* WebInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInspector.h; sourceTree = "<group>"; };
+		4E7170C614BA0AF600A981DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7170C714BA0AF600A981DA /* CoreLocation.framework in Frameworks */,
 				3A6A0B4C105D17590035640D /* Cocoa.framework in Frameworks */,
 				3A114F63105D610B00921886 /* Carbon.framework in Frameworks */,
 				3A7B4C13105EE0E30097B5D5 /* Sparkle.framework in Frameworks */,
@@ -178,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7170C814BA0D8600A981DA /* CoreLocation.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3A4BEF3C10510E0700534481 /* WebKit.framework in Frameworks */,
 				3AF3BB17105C0C6200B3CBCC /* JavaScriptCore.framework in Frameworks */,
@@ -218,6 +223,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E7170C614BA0AF600A981DA /* CoreLocation.framework */,
 				3A7B4C11105EE0E30097B5D5 /* Sparkle.framework */,
 				3A114F62105D610B00921886 /* Carbon.framework */,
 				3AF3BB16105C0C6200B3CBCC /* JavaScriptCore.framework */,
@@ -380,7 +386,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cocui" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Events */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -588,6 +598,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Template;
 			};
 			name = Debug;
@@ -623,7 +634,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -634,8 +645,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};

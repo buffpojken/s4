@@ -51,7 +51,8 @@ EVApp *g_app = NULL;
 	jsapp.defaults = [jsapp.defaultsController defaults];
 	
 	// development mode
-	developmentMode = [jsapp.defaults boolForKey:@"DevelopmentMode"];
+//	developmentMode = [jsapp.defaults boolForKey:@"DevelopmentMode"];
+    developmentMode = YES;
 	[jsapp.defaults setBool:developmentMode forKey:@"WebKitDeveloperExtras"];
 	if (developmentMode) {
 		[jsapp.defaults setBool:NO forKey:@"WebKitInspectorAttached"];
@@ -62,6 +63,7 @@ EVApp *g_app = NULL;
 		[jsapp.defaults setBool:NO forKey:@"DevelopmentMode"];
 		[jsapp.defaults removeObjectForKey:@"WebKitDeveloperExtras"];
 	}
+    
 	
 	return self;
 }
