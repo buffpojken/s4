@@ -17,7 +17,8 @@
 	char window;
 	char document;
 	char frame;
-	
+	char titled; 
+    
 @protected
 	NSInteger _levelBeforeFullscreen;
 	NSRect _frameBeforeFullscreen;
@@ -25,6 +26,7 @@
 
 @property(assign) NSString *level;
 @property(assign) BOOL shadow;
+@property(assign) BOOL titled; 
 @property(assign) BOOL fullscreen;
 @property(readonly) WebScriptObject *window;
 @property(readonly) WebScriptObject *document;

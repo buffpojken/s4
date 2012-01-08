@@ -92,9 +92,24 @@ CUJS_FORWARD_INVOCATION_TO(win)
 	return [win hasShadow];
 }
 
-
 -(void)setShadow:(BOOL)b {
 	return [win setHasShadow:b];
+}
+
+
+
+-(BOOL)titled{
+    return [win styleMask] == NSBorderlessWindowMask;
+}
+
+// TODO: Fix this to actually take a ref to NSStyleMask in order to provide more
+// fine-grained control on window-appearance to script-files
+-(void)setTitled:(BOOL)titled{
+    if([self titled]){
+        [win setStyleMask:NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask|NSResizableWindowMask];
+    }else{
+        return [win setStyleMask:NSBorderlessWindowMask];
+    }
 }
 
 

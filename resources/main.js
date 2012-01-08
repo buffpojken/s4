@@ -2,7 +2,7 @@
 App.createWindow({
   uri: 'index.html',
 	name: 'main',
-  rect: { size: { width: 500, height: 400 } }
+    rect: { size: { width: 500, height: 400 } }
 }).makeKeyAndOrderFront();
 
 // Alternative minimal example of opening a window

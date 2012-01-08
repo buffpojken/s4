@@ -40,9 +40,9 @@ CUJS_TRANSPOND_NAMES_PLAIN
 	[webView setUIDelegate:self];
 	[[webView windowScriptObject] setValue:self forKey:kCUAppWebScriptNamespace];
     
-    loc = [[CLLocationManager alloc] init];
-    loc.delegate = self;
-    [loc startUpdatingLocation];
+//    loc = [[CLLocationManager alloc] init];
+//    loc.delegate = self;
+//    [loc startUpdatingLocation];
     
     return self;
 }
@@ -60,7 +60,6 @@ CUJS_TRANSPOND_NAMES_PLAIN
         return;
     }
 
-    NSLog(@"ninja...");
    id laser = [[webView windowScriptObject] callWebScriptMethod:@"negerkung" withArguments:[NSArray arrayWithObjects:FBOX(newLocation.coordinate.latitude), FBOX(newLocation.coordinate.longitude), nil]];
     NSLog(@"%@", laser);
 }
@@ -173,7 +172,7 @@ CUJS_TRANSPOND_NAMES_PLAIN
 		_fullscreen = ((n = [args objectForKey:@"fullscreen"]) && [n boolValue]);
 		if (_fullscreen)
 			shadow = NO; // shadow defaults to NO
-		
+        
 		// style
 		/*
 		 titled: bool (true)

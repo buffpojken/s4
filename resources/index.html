@@ -103,7 +103,7 @@
 			document.addEventListener("applicationWillResignActive", function(ev){
 				console.log("app resigns active");
 			}, false);
-			
+          
 			// Run a few animated demonstrations
 			//demo_animation();
 			
@@ -122,6 +122,7 @@
 			<p>
 				<button onclick="demo_animation()">Run animated demo</button>
 				<button onclick="Win.fullscreen=(Win.fullscreen ? false : true)">Toggle fullscreen</button>
+                <button onclick="Win.setTitled((Win.titled ? false : true))">Toggle titled</button>
 			</p>
 			<hr>
 			<p>
