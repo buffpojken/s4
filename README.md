@@ -6,4 +6,5 @@ A Cocoa/Webkit based distributed gaming platform, based on and influenced by htt
 
 Many thanks to rsms for making this possible.
 
-
+# For Now
+Move along, there's nothing to see here...
